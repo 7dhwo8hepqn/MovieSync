@@ -2,10 +2,11 @@ const TMDB_KEYS = ['fb7bb23f03b6994dafc674c074d01761','e55425032d3d0f371fc776f30
 
 const IMDB_KEYS = ['4b447405','eb0c0475','7776cbde','ff28f90b','6c3a2d45','b07b58c8','ad04b643','a95b5205','777d9323','2c2c3314','b5cff164','89a9f57d','73a9858a','efbd8357']
 
-const TMDB_API = 'https://api.themoviedb.org/3'
-const TMDB_IMG = 'https://image.tmdb.org/t/p/w500'
-const TMDB_BACK = 'https://image.tmdb.org/t/p/original'
-const VIDSRC = 'https://vidsrc-embed.ru/embed'
+// Use CONFIG from config.js
+const TMDB_API = CONFIG.TMDB_API_BASE
+const TMDB_IMG = CONFIG.TMDB_IMAGE_SMALL
+const TMDB_BACK = CONFIG.TMDB_IMAGE_LARGE
+const VIDSRC = CONFIG.VIDSRC_BASE
 
 let keyIndex = 0
 let imdbKeyIndex = 0
