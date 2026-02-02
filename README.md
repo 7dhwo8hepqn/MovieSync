@@ -47,4 +47,8 @@ Author: **mrabhi2k3** | [GitHub](https://github.com/mrabhi2k3)
 
 ---
 
+## Educational Purpose
+
+**NOTE:** This project is created solely for educational purposes to demonstrate web development skills. I do not intend to do anything wrong or promote piracy. This is a technical showcase of API integration and modern web technologies. So, If u do something Illegal than it's your Risk to perform.
+
 **© 2026 MovieSync** | Built with ❤️ by [mrabhi2k3](https://github.com/mrabhi2k3)
