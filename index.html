@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>MovieSync - Watch Free Movies & TV Shows Online | Stream HD Quality</title>
+  
+  <meta name="description" content="Watch free movies and TV shows online in HD quality. Stream trending, popular, and top-rated content. Discover thousands of movies, series, and episodes on MovieSync - your ultimate streaming destination.">
+  <meta name="keywords" content="watch movies online free, stream tv shows, free movie streaming, watch series online, hd movies, tv series streaming, netflix alternative, movie app, watch films online, streaming site, vidsrc, free streaming platform, online cinema, watch movies hd, tv shows free, best streaming service, movies 2026, trending movies, popular tv shows, binge watch, episode streaming">
+  <meta name="author" content="mrabhi2k3">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moviesync.app/">
+  <meta property="og:title" content="MovieSync - Watch Free Movies & TV Shows Online">
+  <meta property="og:description" content="Stream thousands of movies and TV shows in HD quality. Discover trending content, popular series, and top-rated films.">
+  <meta property="og:image" content="https://moviesync.app/assets/og-image.jpg">
+  <meta property="og:site_name" content="MovieSync">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://moviesync.app/">
+  <meta name="twitter:title" content="MovieSync - Watch Free Movies & TV Shows Online">
+  <meta name="twitter:description" content="Stream thousands of movies and TV shows in HD quality for free.">
+  <meta name="twitter:image" content="https://moviesync.app/assets/og-image.jpg">
+  
+  <!-- Additional Meta Tags -->
+  <meta name="theme-color" content="#dc2626">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  
+  <link rel="canonical" href="https://moviesync.app/">
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MovieSync",
+    "description": "Watch free movies and TV shows online in HD quality",
+    "url": "https://moviesync.app",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "15420"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-[#0b0b0b] text-white overflow-x-hidden">
+
+<button id="menuToggle" class="hidden fixed top-5 left-5 z-[60] w-10 h-10 bg-neutral-800 rounded-lg items-center justify-center hover:bg-neutral-700 transition">
+  <i class="fas fa-bars"></i>
+</button>
+
+<aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-black/95 backdrop-blur-xl z-50 transform translate-x-0 transition-transform duration-300 border-r border-neutral-800 overflow-y-auto">
+  <div class="p-6">
+    <div class="flex items-center justify-between mb-8">
+      <h1 class="text-2xl font-bold text-red-600 cursor-pointer" onclick="navigate('/')">MovieSync</h1>
+      <button id="closeSidebar" class="text-2xl hover:text-red-500 transition"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <nav class="space-y-2">
+      <a href="/" class="nav-link" data-route="/"><i class="fas fa-home mr-3"></i>Home</a>
+      <a href="/movies" class="nav-link" data-route="/movies"><i class="fas fa-film mr-3"></i>Movies</a>
+      <a href="/series" class="nav-link" data-route="/series"><i class="fas fa-tv mr-3"></i>TV Shows</a>
+      <a href="/trending" class="nav-link" data-route="/trending"><i class="fas fa-fire mr-3"></i>Trending</a>
+      <div class="border-t border-neutral-700 my-4"></div>
+      <a href="/about" class="nav-link" data-route="/about"><i class="fas fa-info-circle mr-3"></i>About</a>
+      <a href="/privacy" class="nav-link" data-route="/privacy"><i class="fas fa-shield-alt mr-3"></i>Privacy</a>
+      <a href="/dmca" class="nav-link" data-route="/dmca"><i class="fas fa-gavel mr-3"></i>DMCA</a>
+    </nav>
+  </div>
+</aside>
+
+<header class="header-offset fixed top-0 right-0 left-0 md:left-64 z-40 bg-black/80 backdrop-blur border-b border-neutral-800">
+  <div class="flex items-center justify-between px-6 py-4">
+    <div class="flex-1 max-w-2xl mx-auto">
+      <div class="relative">
+        <input id="searchInput" placeholder="Search movies & shows (Ctrl+K)" 
+          class="w-full pl-12 pr-4 py-2.5 bg-neutral-800 rounded-full outline-none focus:ring-2 focus:ring-red-600 transition">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <!-- Search Suggestions Dropdown -->
+        <div id="searchSuggestions" class="hidden absolute top-full mt-2 w-full bg-neutral-900 border border-neutral-700 rounded-lg shadow-2xl max-h-96 overflow-y-auto z-50"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="app" class="app-offset pt-20 min-h-screen"></main>
+
+<footer class="app-offset bg-neutral-900 border-t border-neutral-800 mt-20">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/assets/favicon.ico" class="h-10 w-10" alt="MovieSync Logo">
+          <span class="text-3xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">MovieSync</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">Your ultimate destination for streaming movies and TV shows. Discover trending content, explore genres, and enjoy unlimited entertainment in HD quality.</p>
+        <div class="flex gap-4">
+          <a href="https://github.com/mrabhi2k3" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-600 transition text-xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kumaarabhishek" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-600 transition text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-gray-400 hover:text-red-600 transition">Home</a></li>
+          <li><a href="/movies" class="text-gray-400 hover:text-red-600 transition">Movies</a></li>
+          <li><a href="/series" class="text-gray-400 hover:text-red-600 transition">TV Shows</a></li>
+          <li><a href="/trending" class="text-gray-400 hover:text-red-600 transition">Trending</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-white font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="text-gray-400 hover:text-red-600 transition">About Us</a></li>
+          <li><a href="/privacy" class="text-gray-400 hover:text-red-600 transition">Privacy Policy</a></li>
+          <li><a href="/dmca" class="text-gray-400 hover:text-red-600 transition">DMCA</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-neutral-800 pt-6">
+      <div class="bg-red-900/10 border border-red-600/30 rounded-lg p-4 mb-6">
+        <p class="text-red-400 text-xs leading-relaxed">
+          <i class="fas fa-exclamation-triangle mr-2"></i>
+          <strong>Disclaimer:</strong> This site does not store any files on its server. All contents are provided by non-affiliated third parties. We do not host, upload, or link to any video, films, media file, live streams, etc.
+        </p>
+      </div>
+      
+      <p class="text-center text-gray-500 text-sm">
+        © 2026 <span class="text-red-600">MovieSync</span> · Crafted with <i class="fas fa-heart text-red-600"></i> by 
+        <a href="https://github.com/mrabhi2k3" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-500 transition underline">mrabhi2k3</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div id="searchModal" class="fixed inset-0 bg-black/95 z-[70] hidden backdrop-blur-sm">
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">Search</h2>
+      <button onclick="closeSearchModal()" class="text-3xl hover:text-red-500 transition"><i class="fas fa-times"></i></button>
+    </div>
+    <input id="modalSearchInput" placeholder="Type to search..." 
+      class="w-full px-6 py-4 bg-neutral-800 rounded-full text-lg outline-none focus:ring-2 focus:ring-red-600 mb-6">
+    <div id="searchResults" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-h-[70vh] overflow-y-auto"></div>
+  </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center backdrop-blur-sm">
+  <div class="text-center">
+    <img src="/assets/loader.gif" alt="Loading..." class="w-24 h-24 mx-auto mb-4">
+    <p class="text-gray-400 text-lg font-semibold">Loading content...</p>
+  </div>
+</div>
+
+<script src="/js/animations.js"></script>
+<script src="/js/notification.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
