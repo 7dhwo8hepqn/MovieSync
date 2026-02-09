@@ -6,7 +6,7 @@
 
 const CONFIG = {
   // Streaming API
-  VIDSRC_BASE: 'https://vidsrc-embed.ru/embed',
+  VIDSRC_BASE: 'https://vidsrcme.su/embed',
   
   // Alternative streaming sources (if main fails)
   VIDSRC_BACKUP: 'https://vidsrc.pro/embed',
