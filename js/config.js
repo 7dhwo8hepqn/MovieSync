@@ -6,10 +6,10 @@
 
 const CONFIG = {
   // Streaming API
-  VIDSRC_BASE: 'https://vidsrcme.su/embed',
+  VIDSRC_BASE: 'https://vsembed.ru/embed',
   
   // Alternative streaming sources (if main fails)
-  VIDSRC_BACKUP: 'https://vidsrc.pro/embed',
+  VIDSRC_BACKUP: 'https://vsembed.su/embed',
   
   // TMDB API Configuration
   TMDB_API_BASE: 'https://api.themoviedb.org/3',
